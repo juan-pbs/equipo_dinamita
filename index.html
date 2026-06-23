@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Portal del Equipo</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <header class="site-header">
+    <h1>Portal del Equipo</h1>
+    <p>Proyecto colaborativo con Git, GitHub, HTML, CSS y JavaScript.</p>
+
+    <nav class="nav-principal" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#equipo">Equipo</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section id="equipo" class="section" aria-labelledby="titulo-equipo">
+      <h2 id="titulo-equipo">Nuestro Equipo</h2>
+      <p>Somos un equipo de desarrollo web que trabaja con control de versiones y flujo de Pull Requests.</p>
+
+      <div class="team-cards">
+        <article class="card">
+          <h3>Juan Pablo Barrera Santiago</h3>
+          <p>Rol: Líder / HTML. Coordina el repositorio, revisa Pull Requests y desarrolla la estructura semántica.</p>
+        </article>
+
+        <article class="card">
+          <h3>Nayeli Ortiz Dimas</h3>
+          <p>Rol: CSS. Implementa diseño responsivo, variables CSS y transiciones.</p>
+        </article>
+
+        <article class="card">
+          <h3>Carlos Jacobo Pérez Pérez</h3>
+          <p>Rol: JavaScript. Programa validaciones del formulario y persistencia con localStorage.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 - Clase de Git y GitHub.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
