@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal del Equipo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <h1>Portal del Equipo</h1>
@@ -14,6 +16,7 @@
     <nav class="nav-principal" aria-label="Navegación principal">
       <a href="#inicio">Inicio</a>
       <a href="#equipo">Equipo</a>
+      <a href="#portafolio">Portafolio</a>
     </nav>
   </header>
 
@@ -39,6 +42,42 @@
         </article>
       </div>
     </section>
+    <section id="portafolio" class="section" aria-labelledby="titulo-portafolio">
+      <h2 id="titulo-portafolio">Nuestro Portafolio</h2>
+      <p>Estos proyectos representan el trabajo del equipo aplicando estructura semántica y control de versiones.</p>
+
+      <div class="portafolio-grid">
+        <article class="proyecto-card">
+          <figure>
+            <img src="img/proyecto1.png" alt="Proyecto 1">
+            <figcaption>Página informativa</figcaption>
+          </figure>
+          <h3>Proyecto 1</h3>
+          <p>Sitio web semántico para presentar información general del equipo.</p>
+          <a href="#" class="btn-ver">Ver proyecto</a>
+        </article>
+
+        <article class="proyecto-card">
+          <figure>
+            <img src="img/proyecto2.png" alt="Proyecto 2">
+            <figcaption>Portafolio responsivo</figcaption>
+          </figure>
+          <h3>Proyecto 2</h3>
+          <p>Portafolio con tarjetas y estructura organizada para mostrar proyectos.</p>
+          <a href="#" class="btn-ver">Ver proyecto</a>
+        </article>
+
+        <article class="proyecto-card">
+          <figure>
+            <img src="img/proyecto3.png" alt="Proyecto 3">
+            <figcaption>Formulario interactivo</figcaption>
+          </figure>
+          <h3>Proyecto 3</h3>
+          <p>Formulario preparado para validación de datos con JavaScript.</p>
+          <a href="#" class="btn-ver">Ver proyecto</a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -47,4 +86,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
