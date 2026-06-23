@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form-contacto');
+  const botonVerMensajes = document.getElementById('btn-ver-mensajes');
 
   if (!form) {
     return;
@@ -26,7 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarMensaje('¡Mensaje enviado correctamente! ✅', 'exito');
     form.reset();
   });
+
+  if (botonVerMensajes) {
+    botonVerMensajes.addEventListener('click', verMensajesGuardados);
+  }
 });
+
+function validarEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
 
 function mostrarMensaje(texto, tipo) {
   const el = document.getElementById('msg-respuesta');
@@ -34,14 +44,34 @@ function mostrarMensaje(texto, tipo) {
   el.className = tipo === 'error' ? 'msg-error' : 'msg-exito';
 }
 
-function validarEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
-
 function guardarEnStorage(datos) {
   const mensajes = JSON.parse(localStorage.getItem('mensajes-contacto')) || [];
   datos.fecha = new Date().toLocaleString('es-MX');
   mensajes.push(datos);
   localStorage.setItem('mensajes-contacto', JSON.stringify(mensajes));
+}
+
+function verMensajesGuardados() {
+  const mensajes = JSON.parse(localStorage.getItem('mensajes-contacto')) || [];
+  const contenedor = document.getElementById('mensajes-guardados');
+
+  console.table(mensajes);
+
+  if (!contenedor) {
+    return;
+  }
+
+  if (mensajes.length === 0) {
+    contenedor.innerHTML = '<p>No hay mensajes guardados todavía.</p>';
+    return;
+  }
+
+  contenedor.innerHTML = mensajes.map((item) => `
+    <article class="mensaje-card">
+      <h3>${item.nombre}</h3>
+      <p><strong>Correo:</strong> ${item.email}</p>
+      <p><strong>Mensaje:</strong> ${item.mensaje}</p>
+      <small>${item.fecha}</small>
+    </article>
+  `).join('');
 }
