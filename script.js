@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    mostrarMensaje('Formulario enviado correctamente.', 'exito');
+    guardarEnStorage({ nombre, email, mensaje });
+    mostrarMensaje('¡Mensaje enviado correctamente! ✅', 'exito');
+    form.reset();
   });
 });
 
@@ -35,4 +37,11 @@ function mostrarMensaje(texto, tipo) {
 function validarEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
+}
+
+function guardarEnStorage(datos) {
+  const mensajes = JSON.parse(localStorage.getItem('mensajes-contacto')) || [];
+  datos.fecha = new Date().toLocaleString('es-MX');
+  mensajes.push(datos);
+  localStorage.setItem('mensajes-contacto', JSON.stringify(mensajes));
 }
