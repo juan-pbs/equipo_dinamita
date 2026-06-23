@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Portal del Equipo</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <header class="site-header">
+    <h1>Portal del Equipo</h1>
+    <p>Proyecto colaborativo con Git, GitHub, HTML, CSS y JavaScript.</p>
+
+    <nav class="nav-principal" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section id="equipo" class="section" aria-labelledby="titulo-equipo">
+      <h2 id="titulo-equipo">Nuestro Equipo</h2>
+      <p>Somos un equipo de desarrollo web que trabaja con control de versiones y flujo de Pull Requests.</p>
+
+      <div class="team-cards">
+        <article class="card">
+          <h3>Juan Pablo Barrera Santiago</h3>
+          <p>Rol: Líder / HTML. Coordina el repositorio, revisa Pull Requests y desarrolla la estructura semántica.</p>
+        </article>
+
+        <article class="card">
+          <h3>Nayeli Ortiz Dimas</h3>
+          <p>Rol: CSS. Implementa diseño responsivo, variables CSS y transiciones.</p>
+        </article>
+
+        <article class="card">
+          <h3>Carlos Jacobo Pérez Pérez</h3>
+          <p>Rol: JavaScript. Programa validaciones del formulario y persistencia con localStorage.</p>
+        </article>
+      </div>
+    </section>
+    <section id="portafolio" class="section" aria-labelledby="titulo-portafolio">
+      <h2 id="titulo-portafolio">Nuestro Portafolio</h2>
+      <p>Estos proyectos representan el trabajo del equipo aplicando estructura semántica y control de versiones.</p>
+
+      <div class="portafolio-grid">
+        <article class="proyecto-card">
+          <figure>
+            <img src="img/proyecto1.png" alt="Captura del proyecto de página informativa del equipo">
+            <figcaption>Página informativa</figcaption>
+          </figure>
+          <h3>Proyecto 1</h3>
+          <p>Sitio web semántico para presentar información general del equipo.</p>
+          <a href="#" class="btn-ver">Ver proyecto</a>
+        </article>
+
+        <article class="proyecto-card">
+          <figure>
+            <img src="img/proyecto2.png" alt="Captura del proyecto de portafolio responsivo">
+            <figcaption>Portafolio responsivo</figcaption>
+          </figure>
+          <h3>Proyecto 2</h3>
+          <p>Portafolio con tarjetas y estructura organizada para mostrar proyectos.</p>
+          <a href="#" class="btn-ver">Ver proyecto</a>
+        </article>
+
+        <article class="proyecto-card">
+          <figure>
+            <img src="img/proyecto3.png" alt="Captura del proyecto con formulario de contacto">
+            <figcaption>Formulario interactivo</figcaption>
+          </figure>
+          <h3>Proyecto 3</h3>
+          <p>Formulario preparado para validación de datos con JavaScript.</p>
+          <a href="#" class="btn-ver">Ver proyecto</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="section" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Contáctanos</h2>
+
+      <form id="form-contacto" novalidate>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+
+        <button type="submit">Enviar</button>
+        <button type="button" id="btn-ver-mensajes">Ver mensajes enviados</button>
+        <p id="msg-respuesta" aria-live="polite"></p>
+      </form>
+
+      <div id="mensajes-guardados" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 - Clase de Git y GitHub.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
