@@ -1,0 +1,69 @@
+:root {
+  --color-primario: #1f3864;
+  --color-acento: #2e75b6;
+  --color-fondo: #f2f4f8;
+  --color-texto: #333333;
+  --color-blanco: #ffffff;
+  --fuente-base: 'Segoe UI', sans-serif;
+  --radio-borde: 8px;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+.site-header {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.nav-principal {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.nav-principal a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section {
+  width: min(1100px, 92%);
+  margin: 32px auto;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  padding: 28px;
+  box-shadow: var(--sombra);
+}
+
+.team-cards,
+.portafolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card,
+.proyecto-card {
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-borde);
+  padding: 18px;
+  box-shadow: var(--sombra);
+}
+
+footer {
+  text-align: center;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 18px;
+}
