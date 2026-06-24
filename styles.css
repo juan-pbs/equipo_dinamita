@@ -144,3 +144,69 @@ footer {
   background-color: var(--color-primario);
   transform: scale(1.05);
 }
+
+#form-contacto {
+  display: grid;
+  gap: 10px;
+  max-width: 620px;
+}
+
+#form-contacto label {
+  font-weight: 700;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: var(--radio-borde);
+  padding: 10px;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+  border-color: var(--color-acento);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.15);
+}
+
+#form-contacto button {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 10px 14px;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#form-contacto button:hover {
+  background-color: var(--color-primario);
+  transform: scale(1.05);
+}
+
+.msg-error {
+  color: #b00020;
+  font-weight: 700;
+}
+
+.msg-exito {
+  color: #146c2e;
+  font-weight: 700;
+}
+
+#mensajes-guardados {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.mensaje-card {
+  border-left: 4px solid var(--color-acento);
+  background-color: var(--color-fondo);
+  padding: 12px;
+  border-radius: var(--radio-borde);
+}
