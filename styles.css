@@ -1,14 +1,25 @@
+:root {
+  --color-primario: #1f3864;
+  --color-acento: #2e75b6;
+  --color-fondo: #f2f4f8;
+  --color-texto: #333333;
+  --color-blanco: #ffffff;
+  --fuente-base: 'Segoe UI', sans-serif;
+  --radio-borde: 8px;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f2f4f8;
-  color: #333333;
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   line-height: 1.6;
 }
 
 .site-header {
-  background-color: #1f3864;
-  color: white;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
   text-align: center;
   padding: 32px 20px;
 }
@@ -21,7 +32,7 @@ body {
 }
 
 .nav-principal a {
-  color: white;
+  color: var(--color-blanco);
   text-decoration: none;
   font-weight: bold;
 }
@@ -29,26 +40,173 @@ body {
 .section {
   width: min(1100px, 92%);
   margin: 32px auto;
-  background-color: white;
-  border-radius: 8px;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
   padding: 28px;
+  box-shadow: var(--sombra);
 }
 
-.team-cards {
+.team-cards,
+.portafolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.card {
-  background-color: #f2f4f8;
-  border-radius: 8px;
+.card,
+.proyecto-card {
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-borde);
   padding: 18px;
+  box-shadow: var(--sombra);
 }
 
 footer {
   text-align: center;
-  background-color: #1f3864;
-  color: white;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
   padding: 18px;
+}
+
+@media (max-width: 768px) {
+  .team-cards,
+  .portafolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .proyecto-card {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-cards,
+  .portafolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-principal {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}
+
+.proyecto-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-card figure {
+  margin: 0;
+}
+
+.proyecto-card img {
+  width: 100%;
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  background-color: #d9e4f2;
+}
+
+.proyecto-card figcaption {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.btn-ver {
+  display: inline-block;
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: var(--radio-borde);
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-ver:hover {
+  background-color: var(--color-primario);
+  transform: scale(1.05);
+}
+
+#form-contacto {
+  display: grid;
+  gap: 10px;
+  max-width: 620px;
+}
+
+#form-contacto label {
+  font-weight: 700;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: var(--radio-borde);
+  padding: 10px;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+  border-color: var(--color-acento);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.15);
+}
+
+#form-contacto button {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 10px 14px;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#form-contacto button:hover {
+  background-color: var(--color-primario);
+  transform: scale(1.05);
+}
+
+.msg-error {
+  color: #b00020;
+  font-weight: 700;
+}
+
+.msg-exito {
+  color: #146c2e;
+  font-weight: 700;
+}
+
+#mensajes-guardados {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.mensaje-card {
+  border-left: 4px solid var(--color-acento);
+  background-color: var(--color-fondo);
+  padding: 12px;
+  border-radius: var(--radio-borde);
 }
