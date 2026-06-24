@@ -67,3 +67,34 @@ footer {
   color: var(--color-blanco);
   padding: 18px;
 }
+
+@media (max-width: 768px) {
+  .team-cards,
+  .portafolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .proyecto-card {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-cards,
+  .portafolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-principal {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}
