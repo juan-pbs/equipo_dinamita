@@ -43,6 +43,7 @@
         </article>
       </div>
     </section>
+
     <section id="portafolio" class="section" aria-labelledby="titulo-portafolio">
       <h2 id="titulo-portafolio">Nuestro Portafolio</h2>
       <p>Estos proyectos representan el trabajo del equipo aplicando estructura semántica y control de versiones.</p>
@@ -94,13 +95,16 @@
         <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
 
         <button type="submit">Enviar</button>
+        <button type="button" id="btn-ver-mensajes">Ver mensajes enviados</button>
         <p id="msg-respuesta" aria-live="polite"></p>
       </form>
+
+      <div id="mensajes-guardados" aria-live="polite"></div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 - Clase de Git y GitHub.</p>
+    <p>© 2026 - Portal del Equipo. Todos los derechos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
