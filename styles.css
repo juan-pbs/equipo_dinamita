@@ -98,3 +98,49 @@ footer {
     padding: 20px;
   }
 }
+
+.proyecto-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-card figure {
+  margin: 0;
+}
+
+.proyecto-card img {
+  width: 100%;
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  background-color: #d9e4f2;
+}
+
+.proyecto-card figcaption {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.btn-ver {
+  display: inline-block;
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: var(--radio-borde);
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-ver:hover {
+  background-color: var(--color-primario);
+  transform: scale(1.05);
+}
