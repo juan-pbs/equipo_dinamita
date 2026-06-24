@@ -1,1 +1,0 @@
-Carpeta para capturas del historial Git, Pull Requests, conflicto, sitio funcionando y localStorage.
